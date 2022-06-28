@@ -1,0 +1,40 @@
+{
+  "name": "requiem.js",
+  "version": "1.0.0",
+  "description": "A library to communicate with Requiem's API.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.ts",
+    "build": "rm -rf dist && mkdir dist && cp -r src/* dist/ && npx tsc -p .",
+    "clean": "rm -rf dist",
+    "watch": "npx tsc -p . --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FireMario211/requiem.js.git"
+  },
+  "keywords": [
+    "requiem",
+    "api",
+    "socket",
+    "requiem.js"
+  ],
+  "author": "Fire",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FireMario211/requiem.js/issues"
+  },
+  "homepage": "https://github.com/FireMario211/requiem.js#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "socket.io-client": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.18.0",
+    "typescript": "^4.7.4"
+  }
+}

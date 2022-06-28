@@ -1,0 +1,8 @@
+{
+  "name": "ping_bot",
+  "version": "1.0.0",
+  "description": "An example bot made in Requiem.js",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT"
+}
