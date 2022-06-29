@@ -1,6 +1,7 @@
 import { RoomData }    from "src/typings/RoomData";
 import { Client }      from "./Client";
 import axios           from 'axios';
+import { Room } from "./Room";
 export class Rooms {
     public rooms: RoomData[] | any;
     client: Client;
@@ -9,7 +10,7 @@ export class Rooms {
         this.client = client;
         return this;
     }
-    async get(id: number) {
+    async getData(id: number) {
         try {
             const response = await axios({
                 method: 'GET',
@@ -19,6 +20,13 @@ export class Rooms {
         } catch(e) {
             return new Error(e as string);
         }
+    }
+    async get(id: number) {
+        const findRoom = this.rooms.find((room: RoomData) => room.id == id);
+        if (!findRoom) return false;
+        const room = new Room(this.client, id);
+        if (!room) return false;
+        return room;
     }
     join(code: string) {
         return new Promise((resolve, reject) => {

@@ -1,6 +1,6 @@
 {
   "name": "requiem.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library to communicate with Requiem's API.",
   "main": "dist/index.js",
   "scripts": {
