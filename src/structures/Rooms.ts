@@ -24,7 +24,7 @@ export class Rooms {
     get(id: number) {
         const findRoom = this.rooms.find((room: RoomData) => room.id == id);
         if (!findRoom) return false;
-        const room = new Room(this.client, id);
+        const room = new Room(this.client, {id});
         if (!room) return false;
         return room;
     }

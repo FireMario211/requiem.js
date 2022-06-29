@@ -81,12 +81,9 @@ export class Client extends EventEmitter {
             this.#join();
         });
         const getMessage = async (data: MessageData) => {
-            const userData = rooms.rooms.find((room: RoomData) => room.id == data.room_id);
-            if (userData) {
-                data.user = userData;
-                const room = await new Room(this, {
-                    id: data.room_id
-                });
+            const roomData = rooms.rooms.find((room: RoomData) => room.id == data.room_id);
+            if (roomData) {
+                const room = await new Room(this, roomData);
                 this.emit('msg', {room: room, send: (content: string) => {
                     return new Promise((resolve, reject) => room.sendMsg(content).then(resolve).catch(reject))
                 }, ...data});
