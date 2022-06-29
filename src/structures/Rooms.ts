@@ -21,7 +21,7 @@ export class Rooms {
             return new Error(e as string);
         }
     }
-    async get(id: number) {
+    get(id: number) {
         const findRoom = this.rooms.find((room: RoomData) => room.id == id);
         if (!findRoom) return false;
         const room = new Room(this.client, id);
